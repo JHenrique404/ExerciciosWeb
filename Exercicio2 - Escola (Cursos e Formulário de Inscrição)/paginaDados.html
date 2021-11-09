@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dados</title>
+
+    <style>
+        .aluno{
+            border-width: 4px;
+            padding: 50px ;
+            margin-left: 20%;
+            margin-top: 3%;
+            max-width: 60px 60px;
+            position: absolute;
+            background: #f9f9f9;
+        }
+
+        .pai{
+            border-width: 4px;
+            padding: 107.5px 50px;
+            margin-left: 40%;
+            margin-top: 3%;
+            position: absolute;
+            background: #f9f9f9;
+        }
+
+        .mae{
+            border-width: 4px;
+            padding: 107.5px 50px;
+            margin-left: 60.8%;
+            margin-top: 3%;
+            position: absolute;
+            background: #f9f9f9;
+        }
+
+        .dadosCurso{
+            border-width: 4px;
+            padding: 50px;
+            margin-left: 37.9%;
+            margin-top: 25%;
+            position: absolute;
+            background: #f9f9f9;
+        }
+
+        .botaoSalvar{
+            padding: 16.5px 14px;
+            max-width: 16.5px 10px;
+            font-size: 18px;
+            background: #0063e5;
+            text-align: center;
+            border-radius: 4px;
+            display: block;
+            color: #f9f9f9;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: .2s ease;
+
+            margin-left: 46.8%;
+            margin-top: 37%;
+            position: absolute;
+        }
+
+        .botaoSalvar:hover{
+            background: #0483ee;
+        }
+
+        .formulario{
+            margin-top: 3%;
+            
+        }
+
+        body{
+            background: url(bakcground.jpg);
+            background-size: cover;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    
+    <div class="formulario">
+        <form method="GET">
+            <fieldset class="aluno">
+                <legend>Aluno</legend>
+
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required> <br><br>
+
+                <label for="cep">CEP</label>
+                <input type="text" id="cep" pattern="\d{5}-?\d{3}" placeholder="CEP"><br>
+
+                <label for="endereco">Endereco</label>
+                <input type="text" id="logradouro" placeholder="Digite seu Endereco"><br>
+
+                <label for="bairro">Bairro</label>
+                <input type="text" id="bairro" placeholder="Digite seu Bairro"><br>
+
+                <label for="numero">Numero</label>
+                <input type="text" id="numero" max="30" placeholder="Numero da Casa"><br>
+
+                <label for="cidade">Cidade</label>
+                <input type="text" id="cidade" placeholder="Digite sua Cidade"><br>
+
+                <label for="complemento">Complemento</label>
+                <input type="text" id="complemento" max="50" placeholder="Complemento do Endereco"><br>
+
+                <label for="uf">Estado</label>
+                <select id="uf">
+                    <option value=""></option>
+                    <option value="AC">Acre</option>
+                    <option value="AL">Alagoas</option>
+                    <option value="AP">Amapá</option>
+                    <option value="AM">Amazonas</option>
+                    <option value="BA">Bahia</option>
+                    <option value="CE">Ceará</option>
+                    <option value="DF">Distrito Federal</option>
+                    <option value="ES">Espírito Santo</option>
+                    <option value="GO">Goiás</option>
+                    <option value="MA">Maranhão</option>
+                    <option value="MT">Mato Grosso</option>
+                    <option value="MS">Mato Grosso do Sul</option>
+                    <option value="MG">Minas Gerais</option>
+                    <option value="PA">Pará</option>
+                    <option value="PB">Paraíba</option>
+                    <option value="PR">Paraná</option>
+                    <option value="PE">Pernambuco</option>
+                    <option value="PI">Piauí</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="RN">Rio Grande do Norte</option>
+                    <option value="RS">Rio Grande do Sul</option>
+                    <option value="RO">Rondônia</option>
+                    <option value="RR">Roraima</option>
+                    <option value="SC">Santa Catarina</option>
+                    <option value="SP">São Paulo</option>
+                    <option value="SE">Sergipe</option>
+                    <option value="TO">Tocantins</option>
+                </select> <br><br>
+
+                <label for="telefone">Telefone</label>
+                <input type="text" id="telefone" placeholder="(**)****-****"> <br>
+
+                <label for="celular">Celular</label>
+                <input type="text" id="celular" required pattern="\(?\d{2}\)?\d{5}-?\d{4}" placeholder="(**)*****-****"><br>
+
+                <label for="email">Email</label>
+                <input type="text" id="email" required placeholder="Digite seu Email"> <br><br>
+                <!--Nao deixei com pattern pq o email, n tem um padrao...pode-ser @gmail, @hotmail, @outlook-->
+
+                <label for="cor">Cor</label>
+                <select id="cor" required>
+                    <option value="branca">Branca</option>
+                    <option value="preta">Preta</option>
+                    <option value="parda">Parda</option>
+                    <option value="amarela">Amerela</option>
+                    <option value="indigena">Indígena</option>
+                </select>
+
+                
+            </fieldset>
+
+
+            <fieldset class="pai">
+                <legend>Pai</legend>
+
+                <label for="nomePai">Nome</label>
+                <input type="text" id="nomePai" name="nomePai" placeholder="Digite seu nome" required> <br>
+
+                <label for="dataNascPai">Data de Nascimento</label>
+                <input type="date" id="dataNascPai"> <br>
+
+                <label for="naturalidadePai">Naturalidade</label>
+                <input type="text" id="naturalidadePai" placeholder="Naturalidade"> <br>
+
+                <label for="instrucaoPai">Instrução</label>
+                <input type="text" id="instrucaoPai" placeholder="Instrução"> <br>
+
+                <label for="profissaoPai">Profissão</label>
+                <input type="text" id="profissaoPai" placeholder="Profissão"> <br>
+
+                <label for="celularPai">Celular</label>
+                <input type="text" id="celularPai" required pattern="\(?\d{2}\)?\d{5}-?\d{4}" placeholder="(**)*****-****"> <br>
+
+                <label for="emailPai">Email</label>
+                <input type="text" id="emailPai" required placeholder="Email"> <br>
+
+                <label for="cpfPai">CPF</label>
+                <input type="text" id="cpfPai" required pattern="\d{3}.?\d{3}.?\d{3}-?\d{2}" placeholder="***.***.***-**"> <br>
+
+                <label for="respFinanceiroPai">Responsavel Financeiro</label>
+                <input type="checkbox" id="respFinanceiroPai"><label for="respFinanceiro">Sim</label>
+                <input type="checkbox" id="respFinanceiroPai"><label for="respFinanceiro">Não</label>
+            </fieldset>
+
+
+            <fieldset class="sua mae">
+                <legend>Mãe</legend>
+
+                <label for="nomeMae">Nome</label>
+                <input type="text" id="nomeMae" name="nome" placeholder="Digite seu nome" required> <br>
+
+                <label for="dataNascMae"></label>
+                <input type="date" id="dataNascMae"> <br>
+
+                <label for="naturalidadeMae">Naturalidade</label>
+                <input type="text" id="naturalidadeMae" placeholder="Naturalidade"> <br>
+
+                <label for="instrucaoMae">Instrução</label>
+                <input type="text" id="instrucaoMae" placeholder="Instrução"> <br>
+
+                <label for="profissaoMae">Profissão</label>
+                <input type="text" id="profissaoMae" placeholder="Profissão"> <br>
+
+                <label for="celularMae">Celular</label>
+                <input type="text" id="celularMae" required pattern="\(?\d{2}\)?\d{5}-?\d{4}" placeholder="(**)*****-****"> <br>
+
+                <label for="emailMae">Email</label>
+                <input type="text" id="emailMae" required placeholder="Email"> <br>
+
+                <label for="cpfMae">CPF</label>
+                <input type="text" id="cpfMae" required pattern="\d{3}.?\d{3}.?\d{3}-?\d{2}" placeholder="***.***.***-**"> <br>
+
+                <label for="respFinanceiroMae">Responsavel Financeiro</label>
+                <input type="checkbox" id="respFinanceiroMae"><label for="respFinanceiro">Sim</label>
+                <input type="checkbox" id="respFinanceiroMae"><label for="respFinanceiro">Não</label>
+            </fieldset>
+
+
+            <fieldset class="dadosCurso">
+                <legend>Curso</legend>
+
+                <label for="curso">Curso</label>
+                <select id="cor" required>
+                    <option value=""></option>
+                    <option value="cursoHTML5">Curso HTML5</option>
+                    <option value="cursoCSS">Curso CSS</option>
+                    <option value="cursoJS">Curso JS</option>
+                </select> <br><br>
+
+                <label for="dataIngresso">Data de Ingresso</label>
+                <input type="date" required> <br><br>
+
+                <label for="valor">Valor e Forma de Pagamento</label>
+                <select id="valor" required>
+                    <option value="aVista">R$ 2500 - A vista/Boleto</option>
+                    <option value="1x">1x no cartão - R$ 2500 </option>
+                    <option value="2x">2x no cartão - R$ 1250</option>
+                    <option value="3x">3x no cartão - R$ 833</option>
+                    <option value="4x">4x no cartão - R$ 625</option>
+                    <option value="5x">5x no cartão - R$ 500</option>
+                    <option value="6x">6x no cartão - R$ 416</option>
+                </select> <br>
+            </fieldset>
+
+            
+            <button type="submit" class="botaoSalvar">Salvar</button>
+        </form>
+    </div>
+
+    <script type="text/javascript">
+		$("#cep").focusout(function(){
+			$.ajax({
+				url: 'https://viacep.com.br/ws/'+$(this).val()+'/json/unicode/',
+				dataType: 'json',
+				success: function(resposta){
+					$("#logradouro").val(resposta.logradouro);
+					$("#complemento").val(resposta.complemento);
+					$("#bairro").val(resposta.bairro);
+					$("#cidade").val(resposta.localidade);
+					$("#uf").val(resposta.uf);
+					$("#numero").focus();
+				}
+			});
+		});
+	</script>
+</body>
+</html>

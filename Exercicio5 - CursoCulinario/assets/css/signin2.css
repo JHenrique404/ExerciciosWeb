@@ -1,0 +1,26 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  /* align-items: center; */
+  padding-top: 20px;
+  padding-bottom: 20px;
+  /* background-color: #282F37; */
+  background: url(../img/NewCanvas1\ -\ Copia.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.containerPinrcipal {
+  background-color: white;
+  border-radius: 10px;
+}
+
+
+.navbar {
+  background: white;
+}

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos</title>
+
+    <style>
+        .body {
+            background: url(bakcground.jpg);
+            background-size: cover;
+            align-items: center;
+        }
+
+        .titulo{
+            font-size: 60px;
+            margin-left: 45%;
+            color: rgba(0, 0, 0, 0.80);
+        }
+
+        #HTML{
+            padding: 30px;
+            background-color: #f9f9f9;
+            position: absolute;
+            margin-left: 2%;
+            margin-top: 2%;
+        }
+
+        #HTML .html5 {
+            margin-left: 35%;
+            max-width: 200px;
+            max-height: 150px
+        }
+
+        #CSS{
+            padding: 30px;
+            background-color: #f9f9f9;
+            position: absolute;
+            margin-left: 35.8%;
+            margin-top: 2%;
+        }
+
+        #CSS .css{
+            position: relative;
+            margin-left: 39%;
+            max-width: 200px;
+            max-height: 150px;
+        }
+
+        #JS{
+            padding: 30px;
+            background-color: #f9f9f9;
+            position: absolute;
+            margin-left: 70%;
+            margin-top: 2%;
+        }
+
+        #JS .js{
+            position: relative;
+            margin-left: 35%;
+            max-width: 200px;
+            max-height: 150px;
+        }
+
+        a{
+            padding: 16.5px 14px;
+            max-width: 16.5px 10px;
+            font-size: 18px;
+            background: #0063e5;
+            text-align: center;
+            border-radius: 4px;
+            display: block;
+            color: #f9f9f9;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: .2s ease;
+        }
+
+        a:hover{
+            background: #0483ee;
+        }
+
+        p.texto{
+            position: relative;
+            margin-left: 20%;
+        }
+
+        p.cargaHoraria{
+            margin-left: 35%;
+        }
+
+        p.preco{
+            font-size: 20px;
+            margin-left: 35%;
+            text-decoration: underline;
+        }
+        
+
+    </style>
+</head>
+
+<body class="body">
+    <h1 class="titulo">Cursos</h1>
+
+    <div id="HTML">
+        <img src="1200px-HTML5_logo_and_wordmark.svg.png" class="html5"> <br>
+        <a href="paginaDados.html?id=cursoHTML">Curso de HTML</a>
+        <p class="texto">Torne-se especialista em front. <br>
+            Baixe o programa e conheça nossa grade! <br>
+            Aprenda a programar páginas web do zero. <br>
+            Domine o Front-end.
+        </p>
+        <p class="cargaHoraria">Carga Horaria: 1 ano</p>
+
+        <table border="1" cellpadding="5" cellspacing="0">
+            <thead>
+                <th>Materia</th>
+                <th>Professores - 1° Semestre</th>
+                <th>Professores - 2° Semestre</th>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>Web</td>
+                    <td>Rafael</td>
+                    <td>Rafael</td>
+                </tr>
+
+                <tr>
+                    <td>Fundamentos</td>
+                    <td>Eduardo</td>
+                    <td>Bruno</td>
+                </tr>
+
+                <tr>
+                    <td>Projeto 1</td>
+                    <td>Fernando</td>
+                    <td>Henrique</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p class="preco">A Vista: R$2,500 </p>
+    </div>
+
+    <div id="CSS">
+        <img src="css-3-logo-1.png" class="css"> <br>
+        <a href="paginaDados.html?id=cursoCSS">Curso de CSS</a>
+        <p class="texto">Torne-se especialista em front end. <br>
+            Baixe o programa e conheça nossa grade! <br>
+            Aprenda a costumizar páginas web do zero. <br>
+            Domine o Front-end.
+        </p>
+        <p class="cargaHoraria">Carga Horaria: 1 ano</p>
+
+        <table border="1" cellpadding="5" cellspacing="0">
+            <thead>
+                <th>Materia</th>
+                <th>Professores - 1° Semestre</th>
+                <th>Professores - 2° Semestre</th>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>Design</td>
+                    <td>Eloisa</td>
+                    <td>Diego</td>
+                </tr>
+
+                <tr>
+                    <td>Fundamentos</td>
+                    <td>Rodrigo</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>Projeto 1</td>
+                    <td>Guilherme</td>
+                    <td>Leonardo</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p class="preco">A Vista: R$2,500 </p>
+    </div>
+
+    <div id="JS">
+        <img src="js.png" class="js"> <br>
+        <a href="paginaDados.html?id=cursoJS" target="_self">Curso de JavaScript</a>
+        <p class="texto">Torne-se especialista em front end e back end. <br>
+            Baixe o programa e conheça nossa grade! <br>
+            Aprenda a programar páginas web do zero. <br>
+            Domine o Front-end e o Back-end.
+        </p>
+        <p class="cargaHoraria">Carga Horaria: 1 ano</p>
+
+        <table border="1" cellpadding="5" cellspacing="0">
+            <thead>
+                <th>Materia</th>
+                <th>Professores - 1° Semestre</th>
+                <th>Professores - 2° Semestre</th>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>Fundamentos</td>
+                    <td>Jose</td>
+                    <td>Henry</td>
+                </tr>
+
+                <tr>
+                    <td>Estruturas</td>
+                    <td>Otavio</td>
+                    <td>Gabriel</td>
+                </tr>
+
+                <tr>
+                    <td>Projeto 1</td>
+                    <td>Pedro</td>
+                    <td>Geraldo</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p class="preco">A Vista: R$2,500 </p>
+    </div>
+</body>
+
+</html>

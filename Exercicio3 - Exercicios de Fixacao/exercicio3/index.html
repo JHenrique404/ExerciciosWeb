@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Restaurante</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" href="">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script>
+        const nav=document.getElementsByTagName("nav")[0];
+        const topoNav=nav.offsetTop;
+
+        window.onscroll=function(){
+            fixarMenuNoTopo();
+        }
+
+        function fixarMenuNoTopo() {
+            if (window.pageYOffset >= topoNav) {
+                nav.classList.add("FixoNoTopo");
+            }else{
+                nav.classList.remove("FixoNoTopo");
+            }
+        }
+    </script>
+
+    <script defer> /*Resolver dps*/
+        const ite = document.getElementById("items");
+        const items = document.querySelectorAll(this.#item, this.item);
+
+        let idx = 0;
+
+        function carrossel() {
+            idx++;
+
+            if (idx > items.length - 1) {
+                idx = 0;
+            }
+
+            items.style.transform = `translateX(${-idx * 500}px)`;
+        }
+
+        setInterval(carrossel, 1800);
+    </script>
+</head>
+
+<body>
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+        </label>
+
+        <a href="index.html">
+            <img src="png-transparent-restaurant-logo-lunch-food-fast-food-restaurant-art-removebg-preview.png"
+            class="logo" href="index.html">
+        </a>
+              
+        <ul>
+            <li><a href="" class="item">Cardápio</a></li>
+            <li><a href="" class="item">Lançamentos</a></li>
+            <li><a href="" class="item">Promoções</a></li>
+            <li><a href="" class="item">Sobre</a></li>
+        </ul>
+    </nav>
+
+
+
+    <section class="principal">
+        <div id="items-wrapper">
+            <div class="container" id="items">
+                <img class="item" src="painel-adesivo-parede-lanche-fast-food-lanchonete-truck-hd-painel-adesivo-lanche-hamburguer.jpg">
+                <img class="item" src="d88acacdd20c6e4af73520058cb85aca.jpg">
+            </div>
+        </div>
+    </section>
+    
+
+</body>
+
+</html>

@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.88.1">
+  <title>Cadastrar Curso</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/sign-in/">
+
+
+
+  <!-- Bootstrap core CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+  <link href="assets/jquery.toast.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">
+
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+
+
+  <!-- Custom styles for this template -->
+  <link href="assets/css/signin2.css" rel="stylesheet">
+
+</head>
+
+<body class="text-center">
+
+  <header>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">GeeKube</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+          aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="home.html">Tela Inicial</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="cadastrarProduto.html">Criar Curso</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="mostrarCurso.html">Mostrar Cursos</a>
+            </li>
+          </ul>
+          <form class="d-flex">
+            <a class="btn btn-primary" href="login.html" role="button">Login</a>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container justify-content-center mt-5 containerPinrcipal">
+    <div class="row">
+      <div class="col-17">
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Curso</th>
+              <th scope="col">Semestres</th>
+              <th scope="col">Valor</th>
+              <th scope="col">Formação</th>
+              <th scope="col">Vagas</th>
+              <th scope="col">Descrição</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody id="tabUsuario">
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+  <!--Adicionando Modal-->
+  <div class="modal fade" id="addUsuario" tabindex="-1" aria-labelledby="tituloModal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="tituloModal">Editar Cursos</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <form id="frmUsuario">
+            <input type="hidden" name="id" id="id">
+              <div class="mb-3">
+                <label for="curso" class="form-label">Nome Curso</label>
+                <input type="text" class="form-control" id="curso" placeholder="Curso" name="curso">
+              </div>
+              <div class="mb-3">
+                <label for="duracao" class="form-label">Duracação em Semestres</label>
+                <input type="text" class="form-control" id="duracao" placeholder="Duracação" name="duracao">
+              </div>
+              <div class="mb-3">
+                <label for="valor" class="form-label">Valor</label>
+                <input type="text" class="form-control" id="valor" placeholder="Valor" name="valor">
+              </div>
+              <div class="mb-3">
+                <label for="tipoFormacao" class="form-label">Tipo Formação</label>
+                <input type="text" class="form-control" id="tipoFormacao" placeholder="Tipo de Formação"
+                  name="tipoFormacao">
+              </div>
+              <div class="mb-3">
+                <label for="vagas" class="form-label">Vagas</label>
+                <input type="text" class="form-control" id="vagas" placeholder="Vagas" name="vagas">
+              </div>
+              <div class="mb-3">
+                <label for="descricao" class="form-label">Descrição</label>
+                <input type="text" class="form-control" id="descricao" placeholder="Descrição" name="descricao">
+              </div>
+          </form>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+          <button data-loading-text="Salvando..." 
+              id="btnSalvar" type="button" class="btn btn-primary">Salvar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+  <!-- Import do jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
+        </script>
+  <script src="assets/jquery.toast.min.js"></script>
+
+
+  <script>
+    getUsuario();
+
+    $("#btnSalvar").click(function () {
+      if ($("#id").val() != '') {
+        putUsuario($("#id").val(), $("#frmUsuario").serialize());
+      } else {
+        postUsuario();
+      }
+    });
+
+    $("body").on("click", ".btnEditar", function () {
+      getUsuarioById($(this).data("id"));
+    });
+    $("body").on("click", ".btnExcluir", function () {
+      deleteUsuario($(this).data("id"));
+    });
+
+    $("#addUsuario").on('show.bs.modal', function (e) {
+      $("#tituloModal").html('Editar Curso');
+    });
+
+    $("#addUsuario").on('hidden.bs.modal', function (e) {
+      limparFormUsuario();
+      getUsuario();
+    });
+
+
+    function getUsuario() {
+      $.get("https://61563f7ae039a0001725a960.mockapi.io/api/v1/cadastroCurso", function (data) {
+        $("#tabUsuario").html('');
+        $(data).each(function (i, e) {
+          $("#tabUsuario").append("<tr><td>" + e.id + "</td><td>" + e.curso + "</td><td>" + e.duracao + "</td><td>" + e.valor + "</td><td>" +
+            e.tipoFormacao + "</td><td>" + e.vagas + "</td><td>" + e.descricao + "</td><td>" +
+            "<button class='btn btn-primary btnEditar' data-id='" + e.id + "'><i class='bi bi-pencil-square'></i> Editar</button> "
+            + "<button class='btn btn-danger btnExcluir' data-id='" + e.id + "'><i class='bi bi-trash'></i> Excluir</button>"
+            + "</td></tr>");
+        });
+      });
+    }
+
+    function postUsuario() {
+      //debugger; serve pra debugar, pelo f10 vai linha por linha 
+      $("#btnSalvar").button('loading');
+      $.post("https://61563f7ae039a0001725a960.mockapi.io/api/v1/cadastroCurso", $("#frmUsuario").serialize(),
+        function (data) {
+          $("#addUsuario").modal('toggle'); //Fecha Modal
+          $.toast({ text: "Salvo com sucesso!", bgColor: 'green', position: "top-right" });
+          getUsuario(); //Recarrega a Lista
+          limparFormUsuario();
+        });
+    }
+
+
+
+    function getUsuarioById(id) {
+      $.get("https://61563f7ae039a0001725a960.mockapi.io/api/v1/cadastroCurso/" + id, function (data) {
+        $("#id").val(data.id);
+        $("#curso").val(data.curso);
+        $("#duracao").val(data.duracao);
+        $("#valor").val(data.valor);
+        $("#tipoFormacao").val(data.tipoFormacao);
+        $("#vagas").val(data.vagas);
+        $("#descricao").val(data.descricao);
+
+        $("#addUsuario").modal('show');
+      });
+    }
+
+
+
+
+    function deleteUsuario(id) {
+
+      // Usa o ajax pra ficar mais completo, pq ele tem o delete
+      $.ajax({
+        url: "https://61563f7ae039a0001725a960.mockapi.io/api/v1/cadastroCurso/" + id,
+        method: "DELETE",
+        success: function () {
+          $.toast({ text: "Excluido com Sucesso!", bgColor: 'green', position: "bottom-right" });
+          getUsuario();
+        },
+        error: function () {
+          $.toast({ text: "Erro ao excluir", bgColor: 'red', position: "bottom-right" });
+        }
+      });
+    }
+
+
+
+    function putUsuario(id, form) {
+      $.ajax({
+        url: "https://61563f7ae039a0001725a960.mockapi.io/api/v1/cadastroCurso/" + id,
+        method: "PUT",
+        data: form,
+        success: function () {
+          $("#addUsuario").modal('toggle');
+          $.toast({ text: "Salvo com sucesso!", bgColor: 'green', position: "bottom-right" });
+          getUsuario();
+          limparFormUsuario();
+        },
+        error: function (error) {
+          $.toast({ text: "Erro ao excluir: " + error, bgColor: "red", position: "bottom-right" });
+        }
+      });
+    }
+
+
+
+    function limparFormUsuario() {
+      $("#id").val('');
+      $("#curso").val('');
+      $("#duracao").val('');
+      $("#valor").val('');
+      $("#tipoFormacao").val('');
+      $("#vagas").val('');
+      $("#descricao").val('');
+    }
+
+  </script>
+
+  </script>
+
+</body>
+
+</html>

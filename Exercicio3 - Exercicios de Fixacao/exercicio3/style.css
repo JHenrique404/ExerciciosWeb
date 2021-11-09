@@ -1,0 +1,167 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: rgb(182, 182, 182);
+}
+
+nav {
+	background: #ffffff;
+	height: 50px;
+	width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    overflow: hidden;
+    position: fixed;
+}
+
+nav .logo {
+    width: 100px;
+    font-size: 25px;
+    line-height: 20px;
+    padding: 0 20px;
+    padding-top: 4.5px;
+    font-weight: bold;
+}
+
+nav ul {
+    float: right;
+    margin-right: 20px;
+}
+
+nav ul li {
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+
+nav ul li a.item {
+    color: #292929;
+    font-size: 18px;
+    padding: 7px 13px;
+    border-radius: 5px;
+}
+
+a.item:active, a.item:hover {
+    background: #fcfcfc;
+    border-bottom: 3px solid #a87942;
+    padding-bottom: 6px;
+    line-height: 1.5;
+    transition: .5s;
+}
+
+.checkbtn {
+    font-size: 25px;
+    color: #292929;
+    float: left;
+    position: fixed;
+    margin-right: 480px;
+    cursor: pointer;
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+@media (max-width: 952px){
+    label.logo{
+        font-size: 30px;
+        padding-left: 50px;
+    }
+    nav ul li a.item {
+        font-size: 16px
+    };
+}
+@media (max-width: 858px){
+    .checkbtn {
+        display: block;
+    }
+    ul {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #ffffff;
+        top: 50px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+    nav ul li{
+        display: block;
+        margin: 50px;
+        line-height: 30px;
+    }
+    nav ul li a.item {
+        font-size: 20px;
+    }
+    a.item:active, a.item:hover {
+        background: none;
+        color: #292929;
+    }
+    #check:checked ~ ul {
+        left: 0;
+    }
+}
+
+.FixoNoTopo{
+    position: fixed;
+    top: 0px;
+    width: 100%;
+}
+
+.FixoNoTopo + .principal {
+    padding-top: 60px;
+}
+
+.principal{
+    padding-top: 60px;
+    display: grid;
+    place-items: center;
+}
+
+a .logo:hover {
+    width: 103px;
+    transition: .2s;
+    cursor: pointer;
+}
+
+
+
+.container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    /* transform: translateX(0); */
+}
+
+#items-wrapper {
+    width: 95vw; 
+}
+
+#items {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+}
+.item {
+    flex: none;
+    width: 100%;
+    height: 800px;
+
+    scroll-snap-align: start;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

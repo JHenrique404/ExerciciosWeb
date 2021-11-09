@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo JS</title>
+</head>
+
+<body>
+    <button onclick="abrirAlert()">Mensagem de Alerta</button>
+
+    <label id="lblTeste"></label>
+    <button id="btnAlterarLabel">Alterar Label</button>
+
+
+
+    <script src="exemplo.js" defer></script>
+    <!-- <script type="text/javascript">
+        document.getElementById("btnAlterarLabel").onclick = function(){
+            alterarLabel();
+        } //funcao mudar texto com a funcao do BTN = ONCLICK aq no script       
+
+        function alterarLabel() {
+            document.getElementById("lblTeste").innerHTML = "Alterando o texto com JS";
+
+        } //funcao mudar texto
+
+        exibeMensagem();
+        function exibeMensagem() {
+            if (true) {
+                var escopoFuncao = "Funcao";
+                let escopoBloco = "Bloco";
+                console.log(escopoFuncao);
+                console.log(escopoBloco);
+            }
+            console.log(escopoFuncao);
+            console.log(escopoBloco);
+        } //mostra q a variavel LET so funciona dentro do bloco de codigo e a variavel VAR funciona em todo o codigo
+
+        
+    </script> -->
+
+    <script>
+        var n1 = 10;
+        var n2 = 20;
+
+        function abrirAlert() {
+            alert(n1 +n2);
+            alert(n1 - n2);
+            alert(n1 * n2);
+            alert(n1 / n2);
+        } //funcao dar alerta
+    </script>
+</body>
+
+</html>

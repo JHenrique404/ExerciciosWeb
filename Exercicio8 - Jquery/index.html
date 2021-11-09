@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio jQuery</title>
+</head>
+
+<body>
+
+    <!-- Criou um data CHAMADO ID -->
+    <ol id="listaComida">
+        <li data-id="1">Cachorro-Quente <span class="preco">R$ 5,00</span></li>
+        <li data-id="2">X-Burguer <span class="preco">R$ 7,00</span></li>
+        <li data-id="3">Misto Quente <span class="preco">R$ 3,00</span></li>
+    </ol>
+
+    <input type="number" id="txtCoddigo" placeholder="Informe o Codigo">
+    <button id="btnAdd">Adicionar</button>
+    <input type="text" id="valorTotal" placeholder="Valor Total" readonly>
+    <textarea id="itensPedido" cols="5" rows="5"></textarea>
+    <ul id="itensEscolhidos"></ul>
+
+
+
+
+
+
+
+    <!-- Import do jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
+        </script>
+
+
+    <script>
+        var valorTotal = 0;
+        $("#btnAdd").click(function () {
+            if ($("#txtCoddigo").val() != '') {
+                let codigoCardapio = $("#txtCoddigo").val();
+
+                $("#listaComida li").each(function (index, element) {
+                    if ($(element).data("id") == codigoCardapio) {
+                        let preco = parseFloat($(element).children(".preco").text().replace("R$ ", "").replace(",", "."));
+                        valorTotal += preco;
+                        $("#valorTotal").val(valorTotal.toLocaleString("pt-BR", {
+                            minimumFractionDigits: 2,
+                            style: 'currency', currency: 'BRL'
+                        }));
+                        let itens = $("#itensPedido").val();
+                        itens += "\n" + $(element).text();
+                        $("#itensPedido").val(itens)
+
+                        $("#itensEscolhidos").append("<li>" + $(element).text() + "</li>");
+                    }
+                });
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>

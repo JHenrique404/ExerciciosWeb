@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"> <!--Importa para colocar icons-->
+  <link rel="shortcut icon" href="imagens/Batman-Logo-1.png">
+  <title>Exercicio Bootstrap</title>
+
+  <style>
+    body{
+      background: url(imagens/aaaaa.jpg) no-repeat top center;
+      background-size: cover;
+      height: 100%;
+      align-items: center;
+      font-family: "Avenir Roman", sans-serif;
+    }
+
+    header{
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      display: inline-block;
+    }
+
+    .corpo{
+      background-color: #212429;
+    }
+
+    .navbar{
+      box-shadow: black 0 0 5px;
+      position: fixed;
+    }
+
+    
+  </style>
+
+</head>
+
+<body class="corpo">
+
+  <div class="barraDeNav">
+    <nav class="navbar navbar-fixed-top navbar-expand-lg navbar-light" style="background: rgb(88, 88, 88);">
+      <div class="container-fluid" style="background: rgb(88, 88, 88); max-height: 40px;">
+        <a class="navbar-brand" style="margin-left: 20px; color: white;" href="#"><img src="imagens/Batman-Logo-1.png" alt="" style="max-width: 40px; height: 100%;">BatStore</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText" style="align-items: center; margin-left: 36.2%;">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 gx-10" >
+            <li class="nav-item" >
+              <a class="nav-link active" style="color: white;" aria-current="page" href="#?=principal">Principal</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="color: white; text-decoration: underline;" href="index.html?id=produtos">Produtos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="color: white;" href="#?id=sobre">Sobre</a>
+            </li>
+          </ul>
+
+          <div class="row" style="margin-left: 37%; margin-top: 15px;">
+            <div class="col-6 mb-3">
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                placeholder="Pesquisar...">
+            </div>
+            <div class="col-6">
+              <button type="button" class="btn btn-primary"><i class="bi bi-search"></i> Pesquisar</button> 
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  
+
+   
+
+<div class="corpo">
+
+  <div></div>
+  <div class="card" style="width: 18rem; position: absolute; margin-left: 10%; margin-top: 20px; height: 70%;">
+    <img src="imagens/Batman1.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Batman - 1989</h5>
+      <p class="card-text">Boneco Batman para colocecionadores. <br><br><b>Preco: R$2000,00</b></p>
+      <a href="produto.html?id=batman1989" class="btn btn-primary">Veja mais.</a>
+    </div>
+  </div>
+
+  <div class="card" style="width: 18rem; position: absolute; margin-left: 43%; margin-top: 20px; height: 70%;">
+    <img src="imagens/Batman2.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Batman Multiverse - 2005</h5>
+      <p class="card-text">Boneco Batman para colocecionadores. <br><br><b>Preco: R$2000,00</b></p>
+      <a href="produto.html" class="btn btn-primary">Veja mais.</a>
+    </div>
+  </div>
+
+  <div class="card" style="width: 18rem; position: absolute; margin-left: 74%; margin-top: 20px; height: 70%">
+    <img src="imagens/Batman3.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Batman Cartoon Version - 2007</h5>
+      <p class="card-text">Boneco Batman para colocecionadores. <br><b>Preco: R$2000,00</b></p>
+      <a href="produto.html" class="btn btn-primary">Veja mais.</a>
+    </div>
+  </div>
+
+  <div class="card" style="width: 18rem; position: absolute; margin-left: 10%; margin-top: 41%; height: 70%">
+    <img src="imagens/Batman4.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Batman Comics Version - 2008</h5>
+      <p class="card-text">Boneco Batman para colocecionadores. <br><b>Preco: R$2000,00</b></p>
+      <a href="produto.html?id=batman1989" class="btn btn-primary">Veja mais.</a>
+    </div>
+  </div>
+
+  <div class="card" style="width: 18rem; position: absolute; margin-left: 43%; margin-top: 41%; height: 70%">
+    <img src="imagens/Batman6.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Batman Special Version Halloween Edition - 1988</h5>
+      <p class="card-text">Boneco Batman para colocecionadores. <br><b>Preco: R$2000,00</b></p>
+      <a href="produto.html" class="btn btn-primary">Veja mais.</a>
+    </div>
+  </div>
+
+  <div class="card" style="width: 18rem; position: absolute; margin-left: 74%; margin-top: 41%; height: 70%">
+    <img src="imagens/Batman5.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Batman vs Superman: A origen da Justiça - 2016</h5>
+      <p class="card-text">Boneco Batman para colocecionadores. <br><b>Preco: R$2000,00</b></p>
+      <a href="produto.html" class="btn btn-primary">Veja mais.</a>
+    </div>
+  </div>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+    crossorigin="anonymous"></script>
+</body>
+</html>
